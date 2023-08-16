@@ -1,7 +1,8 @@
 # Shape Library
 
-Welcome to the Shape Library! This library provides classes for different geometric shapes, including Rectangle, Circle, and Triangle. These classes allow you to perform various calculations and retrieve information about the shapes.
+Welcome to the Geometry Calculator Shape Library! This library provides classes for different geometric shapes, including Rectangle, Circle, and Triangle. These classes allow you to perform various calculations and retrieve information about the shapes.
 
+Link to library on npm: https://www.npmjs.com/package/geometry-shaper
 ## Table of contents
 
 0. [Installation](#Installation)

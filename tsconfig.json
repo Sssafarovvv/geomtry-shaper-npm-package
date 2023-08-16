@@ -7,6 +7,7 @@
     "declaration": true,
     "esModuleInterop": true,
     "noImplicitAny": true,
+    "allowJs": false,
     "sourceMap": true,
   },
   "include": ["src/**/*", "../test.ts"],

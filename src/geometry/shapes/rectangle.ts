@@ -16,7 +16,7 @@ class Rectangle implements rectangleData {
    * Calculate the area of the rectangle.
    * @returns {number} - The area of the rectangle.
    */
-  async getArea(): Promise<number> {
+  getArea(): number {
     return this.width * this.height;
   }
 
@@ -24,7 +24,7 @@ class Rectangle implements rectangleData {
    * Calculate the perimeter of the rectangle.
    * @returns {number} - The perimeter of the rectangle.
    */
-  async getPerimeter(): Promise<number> {
+  getPerimeter(): number {
     return (this.width + this.height) * 2;
   }
 
@@ -32,7 +32,7 @@ class Rectangle implements rectangleData {
    * Calculate the diagonal of the rectangle.
    * @returns {number} - The diagonal of the rectangle.
    */
-  async getDiagonal(): Promise<number> {
+  getDiagonal(): number {
     return Math.sqrt(this.width * this.width + this.height * this.height);
   }
 
@@ -40,20 +40,14 @@ class Rectangle implements rectangleData {
    * Get all data about the rectangle, including width, height, area, perimeter, and diagonal.
    * @returns {rectangleData} - An object containing rectangle data.
    */
-  async getAllData(): Promise<rectangleData> {
-    const [area, perimeter, diagonal] = await Promise.all([
-      this.getArea(),
-      this.getPerimeter(),
-      this.getDiagonal(),
-    ]);
-
+  getAllData(): rectangleData {
     return {
       type: "rectangle",
       width: this.width,
       height: this.height,
-      area,
-      perimeter,
-      diagonal,
+      area: this.getArea(),
+      perimeter: this.getPerimeter(),
+      diagonal: this.getDiagonal(),
     };
   }
 }

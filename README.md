@@ -11,9 +11,9 @@ Welcome to the Shape Library! This library provides classes for different geomet
 
 ## Installation
 
-To use the Shape Library in your project, you can install it using npm:
+To use the library in your project, you can install it using npm:
 
-npm install shape-library
+npm i geometry-shaper
 
 ## Usage
 # Rectangle
@@ -69,6 +69,6 @@ getAllData(): triangleData: Retrieves all data about the triangle, including bas
 
 import { Triangle } from 'shapes-library';
 
-const triangle = new Triangle(8, 6);
+const triangle = new Triangle(8, 6); // 24
 const area = triangle.getArea();
 const allData = triangle.getAllData();

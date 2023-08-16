@@ -5,33 +5,55 @@ class Circle implements circleData {
   diameter!: number;
 
   /**
-   * Initialize Circle specified radius
-   * @param {number} radius
-   *  */
+   * Initialize a Circle with a specified radius.
+   * @param {number} radius - The radius of the circle.
+   */
   constructor(public radius: number) {
     this.radius = radius;
   }
 
-  getDiameter(): number {
+  /**
+   * Get the diameter of the circle.
+   * @returns {number} - The diameter of the circle.
+   */
+  async getDiameter(): Promise<number> {
     this.diameter = this.radius * 2;
     return this.diameter;
   }
 
-  getArea(): number {
+  /**
+   * Calculate the area of the circle.
+   * @returns {number} - The area of the circle.
+   */
+  async getArea(): Promise<number> {
     return Math.PI * this.radius * this.radius;
   }
 
-  getPerimeter(): number {
+  /**
+   * Calculate the perimeter (circumference) of the circle.
+   * @returns {number} - The perimeter of the circle.
+   */
+  async getPerimeter(): Promise<number> {
     return 2 * Math.PI * this.radius;
   }
 
-  getAllData(): circleData {
+  /**
+   * Get all data about the circle, including radius, diameter, area, and perimeter.
+   * @returns {circleData} - An object containing circle data.
+   */
+  async getAllData(): Promise<circleData> {
+    const [diameter, area, perimeter] = await Promise.all([
+      this.getDiameter(),
+      this.getArea(),
+      this.getPerimeter(),
+    ]);
+
     return {
       type: "circle",
       radius: this.radius,
-      diameter: this.getDiameter(),
-      area: this.getArea(),
-      perimeter: this.getPerimeter(),
+      diameter,
+      area,
+      perimeter,
     };
   }
 }

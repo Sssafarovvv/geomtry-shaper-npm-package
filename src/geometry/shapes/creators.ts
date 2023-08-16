@@ -1,6 +1,6 @@
-import { shapeData } from "../interfaces";
+import { IShapeData } from "../interfaces";
 
-export interface circleData extends shapeData {
+export interface circleData extends IShapeData {
   type: "circle";
   radius: number;
   diameter?: number;
@@ -8,7 +8,7 @@ export interface circleData extends shapeData {
   perimeter?: number;
 }
 
-export interface rectangleData extends shapeData {
+export interface rectangleData extends IShapeData {
   type: "rectangle";
   width: number;
   height: number;
@@ -17,7 +17,7 @@ export interface rectangleData extends shapeData {
   diagonal?: number;
 }
 
-export interface triangleData extends shapeData {
+export interface triangleData extends IShapeData {
   type: "triangle";
   base: number;
   height: number;

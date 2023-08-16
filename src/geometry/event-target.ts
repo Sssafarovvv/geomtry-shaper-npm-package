@@ -1,4 +1,4 @@
-import { shapeData, EventListener } from "./interfaces";
+import { IShapeData, EventListener } from "./interfaces";
 
 /**
  * Represents an event target that can register event listeners and dispatch events to them.
@@ -22,7 +22,7 @@ import { shapeData, EventListener } from "./interfaces";
    * Dispatches an event to all registered listeners for the specified event type.
    * @param {shapeData} event - The event data to dispatch.
    */
-  dispatchEvent(event: shapeData) {
+  dispatchEvent(event: IShapeData) {
     const eventListeners = this.listeners[event.type];
     if (eventListeners) {
       eventListeners.forEach((listener) => listener(event));

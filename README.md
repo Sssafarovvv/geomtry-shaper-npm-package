@@ -33,10 +33,10 @@ getAllData(): rectangleData: Retrieves all data about the rectangle, including w
 import { Rectangle } from 'shapes-library';
 
 const rectangle = new Rectangle(10, 5);
-const area = rectangle.getArea();
-const perimeter = rectangle.getPerimeter();
+const area = rectangle.getArea(); // 50
+const perimeter = rectangle.getPerimeter(); // 30
 const diagonal = rectangle.getDiagonal();
-const allData = rectangle.getAllData();
+const allData = rectangle.getAllData(); // {area: 50, perimeter:...}
 
 # Circle
 The Circle class represents a circle with a specified radius.
@@ -56,7 +56,6 @@ import { Circle } from 'shapes-library';
 
 const circle = new Circle(5);
 const area = circle.getArea();
-const circumference = circle.getCircumference();
 const allData = circle.getAllData();
 # Triangle
 The Triangle class represents a triangle with a specified base and height.
